@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            background-color: aqua;
+        }
+
+        button:active {
+            background-color: rgb(2, 230, 230);
+        }
+
+        #picture {
+            width: 15rem;
+        }
+
+        .colorButton {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="page"></div>
+    <div id="intro"></div>
+    <div id="hobby"></div>
+    <div id="pic"></div>
+    <div id="color"></div>
+
+    <script>
+        showPage();
+        function showPage() {
+            backToStart();
+            document.getElementById('page').innerHTML = /*HTML*/`
+            <h1>Overskrift 123</h1>
+            <button onclick="showIntroduksjon()">Introduksjon</button>
+            <button onclick="showHobby()">Liste av hobbyer</button>
+            <button onclick="showPic()">Bilde</button>
+            <button onclick="showColor()">Endre bakgrunnsfarge</button>
+            `;
+        }
+        function showIntroduksjon() {
+            backToStart();
+            document.getElementById('intro').innerHTML = /*HTML*/`
+            <h1>Introduksjon</h1>
+            <div>Hei dette er en introduksjon</div>
+            <button onclick="showPage()">Back</button>
+            `;
+        }
+        function showHobby() {
+            backToStart();
+            document.getElementById('hobby').innerHTML = /*HTML*/`
+            <h1>Hobby</h1>
+            <li>Listenummer 1</li>
+            <li>Listenummer 2</li>
+            <li>Listenummer 3</li>
+            <ul>
+            <li>Underliste 1</li>
+            <li>Underliste 2</li>
+            <li>Underliste 3</li>
+            </ul>
+            <li>Listenummer 4</li>
+                <button onclick="showPage()">Back</button>
+            `;
+        }
+        function showPic() {
+            backToStart();
+            document.getElementById('pic').innerHTML = /*HTML*/`
+            <h1>Bilde</h1>
+            <div>
+                <img id="picture" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"/>
+                </div>
+            <button onclick="showPage()">Back</button>
+            `;
+        }
+        function showColor() {
+            backToStart();
+            document.getElementById('color').innerHTML = /*HTML*/`
+            <h1>Farger</h1>
+            <button class = "colorButton" style="background-color:white;" onclick ="document.body.style.background = 'white';">Hvit</button>
+            <button class = "colorButton" style="background-color:red;" onclick ="document.body.style.background = 'red';">Rød</button>
+            <button class = "colorButton" style="background-color:blue;" onclick ="document.body.style.background = 'blue';">Blå</button>
+            <button class = "colorButton" style="background-color:green;" onclick ="document.body.style.background = 'green';">Grønn</button>
+            <button class = "colorButton" style="background-color:purple;" onclick ="document.body.style.background = 'purple';">Lilla</button>
+            <button onclick="showPage()">Back</button>
+            `;
+        }
+        function backToStart() {
+            document.getElementById('page').innerHTML = '';
+            document.getElementById('intro').innerHTML = '';
+            document.getElementById('hobby').innerHTML = '';
+            document.getElementById('pic').innerHTML = '';
+            document.getElementById('color').innerHTML = '';
+        }
+    </script>
+</body>
+
+</html>
